@@ -29,7 +29,7 @@ export const Login = () => {
         }
 
         axios
-            .post('http://challenge-react.alkemy.org', {
+            .post('https://challenge-react.alkemy.org', {
                 email,
                 password,
             })
