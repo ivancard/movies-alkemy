@@ -1,8 +1,9 @@
 import { NavLink } from 'react-router-dom';
+import { Buscador } from './Buscador';
 
 export const Header = () => {
     const handleLogOut = () => {
-        localStorage.removeItem('token');
+        sessionStorage.removeItem('token');
         window.location.reload();
     };
     return (
@@ -35,14 +36,17 @@ export const Header = () => {
                     </li>
                     <li className='w-32  text-center'>
                         <NavLink
-                            to='/contact'
+                            to='/favourites'
                             className={({ isActive }) =>
                                 isActive
                                     ? 'text-indigo-100 bg-gray-700 block  py-5'
                                     : 'text-indigo-500 block  py-5'
                             }>
-                            Contact
+                            Favoritos
                         </NavLink>
+                    </li>
+                    <li>
+                        <Buscador />
                     </li>
                     <li className='w-32 text-center py-5 block absolute right-0 hover:text-indigo-300'>
                         <button onClick={handleLogOut}>Log out</button>

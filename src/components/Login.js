@@ -37,11 +37,11 @@ export const Login = () => {
                 console.log(res);
                 swAlert(<h2>Welcome</h2>);
                 const tokenReceived = res.data.token;
-                localStorage.setItem('token', tokenReceived);
+                sessionStorage.setItem('token', tokenReceived);
                 navigate('/list', { replace: true });
             });
     };
-    let token = localStorage.getItem('token');
+    let token = sessionStorage.getItem('token');
 
     return (
         <>
