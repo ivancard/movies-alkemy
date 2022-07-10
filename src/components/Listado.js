@@ -26,7 +26,9 @@ export const Listado = (props) => {
         <>
             {/* If there isnt token, this will redirect to te login page  */}
 
-            
+            {!token ? (
+                <Navigate to='/' replace state={{ from: location }} />
+            ) : (
                 <div className='columns-4 p-10 bg-gray-700 '>
                     {movie.map((movie) => (
                         <div
@@ -63,7 +65,7 @@ export const Listado = (props) => {
                         </div>
                     ))}
                 </div>
-            
+            )}
         </>
     );
 };
