@@ -34,11 +34,14 @@ export const Login = () => {
                 password,
             })
             .then((res) => {
-                console.log(res);
                 swAlert(<h2>Welcome</h2>);
                 const tokenReceived = res.data.token;
                 sessionStorage.setItem('token', tokenReceived);
                 navigate('/list', { replace: true });
+            })
+            .catch((err) => {
+                console.log(err);
+                swAlert(<h2>Error</h2>);
             });
     };
     let token = sessionStorage.getItem('token');

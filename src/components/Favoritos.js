@@ -1,19 +1,8 @@
 import { Link, Navigate, useLocation } from 'react-router-dom';
 export const Favoritos = (props) => {
-    // const [favourites, setfavourites] = useState([]);
-
     let token = sessionStorage.getItem('token');
 
     const location = useLocation();
-
-    // useEffect(() => {
-    //     const favInLocal = localStorage.getItem('favs');
-    //     if (favInLocal !== null) {
-    //         setfavourites(JSON.parse(favInLocal));
-    //     } else {
-    //         setfavourites([]);
-    //     }
-    // }, []);
 
     return (
         <>
@@ -23,6 +12,11 @@ export const Favoritos = (props) => {
                 <>
                     <div className='bg-gray-700 text-white px-10 pt-5 h-full'>
                         <h2 className='text-3xl'>Favoritos</h2>
+                        {props.favourites.length === 0 && (
+                            <div className='text-xl mt-5 ml-5 bg-gray-600 text-center p-10 rounded-md'>
+                                Aun no tienes favoritos
+                            </div>
+                        )}
                     </div>
                     <div className='columns-4 p-10 bg-gray-700 '>
                         {props.favourites.map((movie) => (

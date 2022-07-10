@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { Buscador } from './Buscador';
 
-export const Header = () => {
+export const Header = (props) => {
     const handleLogOut = () => {
         sessionStorage.removeItem('token');
         window.location.reload();
@@ -42,7 +42,10 @@ export const Header = () => {
                                     ? 'text-indigo-100 bg-gray-700 block  py-5'
                                     : 'text-indigo-500 block  py-5'
                             }>
-                            Favoritos
+                            Favoritos{' '}
+                            <span className='bg-gray-300 px-1 text-gray-700 rounded-md ml-1'>
+                                {props.favourites.length}
+                            </span>
                         </NavLink>
                     </li>
                     <li>

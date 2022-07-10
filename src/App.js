@@ -66,7 +66,7 @@ function App() {
     };
     return (
         <div className='flex flex-col justify-between h-screen'>
-            <Header />
+            <Header favourites={favourites} />
             <Routes>
                 <Route path='/' element={<Login />} />
                 <Route

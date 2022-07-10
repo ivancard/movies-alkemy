@@ -16,5 +16,16 @@
 }
 
 .favouriteTrue {
-    color: crimson;
+    animation: changeColor 2s ease-in-out ;
+}
+@keyframes changeColor {
+    0% {
+        color: white;
+    }
+    50% {
+        color: crimson;
+    }
+    100% {
+        color: white;
+    }
 }
